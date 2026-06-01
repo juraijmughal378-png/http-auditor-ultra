@@ -4,25 +4,34 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "http-auditor-ultra"
-version = "2.0.1"
-description = "Advanced HTTP auditing & reconnaissance framework for authorized security assessments"
+version = "3.0.0"
+description = "Advanced HTTP auditing & reconnaissance framework — WAF detection, TLS audit, subdomain enum, port scan"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 requires-python = ">=3.12"
-authors = [{name = "HackerAI"}]
-keywords = ["security", "auditing", "http", "reconnaissance", "pentesting", "waf-detection", "tls"]
+authors = [{name = "jurai_mughal", email = "juraijmughal378@gmail.com"}]
+keywords = ["security", "auditing", "http", "waf-detection", "tls", "reconnaissance", "pentesting", "subdomain"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: System Administrators",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Security",
+    "Topic :: System :: Networking :: Monitoring",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
 ]
 dependencies = [
     "httpx>=0.28.0,<1.0.0",
     "pyyaml>=6.0",
     "cryptography>=42.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/juraijmughal378-png/http-auditor-ultra"
+Repository = "https://github.com/juraijmughal378-png/http-auditor-ultra"
+"Bug Tracker" = "https://github.com/juraijmughal378-png/http-auditor-ultra/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -53,3 +62,7 @@ filterwarnings = ["ignore::DeprecationWarning"]
 [tool.coverage.run]
 source = ["http_auditor_ultra"]
 omit = ["*/tests/*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
