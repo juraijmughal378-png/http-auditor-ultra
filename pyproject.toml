@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "http-auditor-ultra"
-version = "2.0.0"
+version = "2.0.1"
 description = "Advanced HTTP auditing & reconnaissance framework for authorized security assessments"
 readme = "README.md"
 license = {text = "MIT"}
