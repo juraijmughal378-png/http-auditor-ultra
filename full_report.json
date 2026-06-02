@@ -1,0 +1,367 @@
+{
+  "metadata": {
+    "tool": "HTTP Auditor Ultra",
+    "version": "3.0.0",
+    "timestamp": "2026-06-01T02:59:33.218480+00:00",
+    "config": {
+      "timeout": 30.0,
+      "max_retries": 3,
+      "backoff_factor": 1.0,
+      "max_concurrent": 10,
+      "rate_limit_delay": 0.0,
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "headers": {},
+      "verify_ssl": true,
+      "follow_redirects": true,
+      "log_level": "INFO",
+      "fingerprint_enabled": true,
+      "tls_audit_enabled": true,
+      "subdomain_enum_enabled": true,
+      "port_scan_enabled": true,
+      "path_discovery_enabled": true,
+      "common_ports": [
+        80,
+        443,
+        8080,
+        8443,
+        8000,
+        8888,
+        9443
+      ],
+      "max_scan_ports": 100,
+      "scan_timeout": 3.0,
+      "output_json": "full_report.json",
+      "output_csv": null,
+      "output_html": "full_report.html",
+      "subdomain_wordlist": null,
+      "path_wordlist": null
+    }
+  },
+  "statistics": {
+    "total_urls": 1,
+    "successful": 1,
+    "failed": 0,
+    "retried": 0,
+    "total_time_seconds": 0.592,
+    "average_time_per_url_seconds": 0.592,
+    "success_rate_percent": 100.0,
+    "unique_status_codes": {
+      "200": 1
+    },
+    "error_count": 0,
+    "subdomains_found": 10,
+    "paths_found": 19,
+    "open_ports_found": 2,
+    "wafs_detected": 0,
+    "tls_security_issues": 0,
+    "missing_security_headers": 11
+  },
+  "results": [
+    {
+      "url": "https://uajk.edu.pk",
+      "status_code": 200,
+      "success": true,
+      "response_time_seconds": 0.2968,
+      "content_length": 223339,
+      "server": "Apache",
+      "redirect_url": "https://uajk.edu.pk",
+      "error": "",
+      "retries": 0,
+      "http_method": "GET",
+      "waf_detected": "",
+      "tech_stack": [
+        "Apache"
+      ],
+      "security_headers": {
+        "strict-transport-security": {
+          "status": "missing",
+          "value": null,
+          "description": "HSTS — enforces HTTPS connections",
+          "severity": "HIGH",
+          "recommended": "max-age=31536000; includeSubDomains; preload",
+          "cve_risk": "Man-in-the-middle attacks, SSL stripping"
+        },
+        "content-security-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "CSP — prevents XSS and data injection",
+          "severity": "HIGH",
+          "recommended": "default-src 'self'; script-src 'self'",
+          "cve_risk": "XSS, clickjacking, data exfiltration"
+        },
+        "x-frame-options": {
+          "status": "missing",
+          "value": null,
+          "description": "X-Frame-Options — prevents clickjacking",
+          "severity": "HIGH",
+          "recommended": "SAMEORIGIN",
+          "cve_risk": "Clickjacking attacks"
+        },
+        "x-content-type-options": {
+          "status": "missing",
+          "value": null,
+          "description": "X-Content-Type-Options — prevents MIME sniffing",
+          "severity": "MEDIUM",
+          "recommended": "nosniff",
+          "cve_risk": "MIME confusion attacks"
+        },
+        "x-xss-protection": {
+          "status": "missing",
+          "value": null,
+          "description": "X-XSS-Protection — browser XSS filter",
+          "severity": "MEDIUM",
+          "recommended": "1; mode=block",
+          "cve_risk": "Reflected XSS attacks"
+        },
+        "referrer-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "Referrer-Policy — controls referrer information",
+          "severity": "MEDIUM",
+          "recommended": "strict-origin-when-cross-origin",
+          "cve_risk": "Information leakage via referrer header"
+        },
+        "permissions-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "Permissions-Policy — restricts browser feature access",
+          "severity": "LOW",
+          "recommended": "geolocation=(), microphone=(), camera=()",
+          "cve_risk": "Unauthorized access to device features"
+        },
+        "cross-origin-resource-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "CORP — restricts cross-origin resource reads",
+          "severity": "LOW",
+          "recommended": "same-origin",
+          "cve_risk": "Cross-origin data leaks (Spectre)"
+        },
+        "cross-origin-opener-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "COOP — isolates browsing context",
+          "severity": "LOW",
+          "recommended": "same-origin",
+          "cve_risk": "Cross-origin attacks via window.opener"
+        },
+        "cross-origin-embedder-policy": {
+          "status": "missing",
+          "value": null,
+          "description": "COEP — requires CORP for all resources",
+          "severity": "LOW",
+          "recommended": "require-corp",
+          "cve_risk": "Side-channel attacks (Spectre/Meltdown)"
+        },
+        "cache-control": {
+          "status": "present",
+          "value": "max-age=0",
+          "description": "Cache-Control — prevents sensitive data caching",
+          "severity": "MEDIUM",
+          "recommended": "no-store, no-cache, must-revalidate",
+          "cve_risk": "Sensitive data exposure via browser cache"
+        },
+        "clear-site-data": {
+          "status": "missing",
+          "value": null,
+          "description": "Clear-Site-Data — clears browser data on logout",
+          "severity": "LOW",
+          "recommended": "\"cache\", \"cookies\", \"storage\"",
+          "cve_risk": "Session persistence after logout"
+        }
+      }
+    }
+  ],
+  "tls_audit": [
+    {
+      "hostname": "uajk.edu.pk",
+      "port": 443,
+      "tls_version": "TLSv1.3",
+      "tls_version_assessment": "TLS 1.3 (strong)",
+      "cipher_suite": "TLS_AES_256_GCM_SHA384",
+      "cipher_strength": "strong",
+      "certificate_valid": true,
+      "not_before": "2026-04-20T07:52:57+00:00",
+      "not_after": "2026-07-19T07:52:56+00:00",
+      "days_remaining": 48,
+      "expiring_soon": false,
+      "expired": false,
+      "issuer": "O=Let's Encrypt, CN=R13",
+      "subject": "CN=uajk.edu.pk",
+      "common_name": "uajk.edu.pk",
+      "subject_alt_names": [
+        "mail.uajk.edu.pk",
+        "uajk.edu.pk",
+        "www.uajk.edu.pk"
+      ],
+      "signature_algorithm": "sha256",
+      "weak_signature": false,
+      "self_signed": false,
+      "chain_length": 0,
+      "error": ""
+    }
+  ],
+  "subdomains": [
+    {
+      "subdomain": "challan.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "thesis.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "incps.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "ugat.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "admissions.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "alumni.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "mail.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "www.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "results.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    },
+    {
+      "subdomain": "result.uajk.edu.pk",
+      "resolved": "",
+      "source": "ct"
+    }
+  ],
+  "port_scan": [
+    {
+      "host": "uajk.edu.pk",
+      "port": 80,
+      "open": true,
+      "service": "HTTP"
+    },
+    {
+      "host": "uajk.edu.pk",
+      "port": 443,
+      "open": true,
+      "service": "HTTPS"
+    }
+  ],
+  "paths_discovered": [
+    {
+      "url": "https://uajk.edu.pk/wp-admin",
+      "status_code": 301,
+      "size": 277
+    },
+    {
+      "url": "https://uajk.edu.pk/.well-known",
+      "status_code": 301,
+      "size": 280
+    },
+    {
+      "url": "https://uajk.edu.pk/robots.txt",
+      "status_code": 200,
+      "size": 165
+    },
+    {
+      "url": "https://uajk.edu.pk/sitemap.xml",
+      "status_code": 200,
+      "size": 851
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-content",
+      "status_code": 301,
+      "size": 279
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-content/uploads",
+      "status_code": 301,
+      "size": 287
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-content/plugins",
+      "status_code": 301,
+      "size": 287
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-content/themes",
+      "status_code": 301,
+      "size": 286
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-includes",
+      "status_code": 301,
+      "size": 280
+    },
+    {
+      "url": "https://uajk.edu.pk/xmlrpc.php",
+      "status_code": 405,
+      "size": 42
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-admin/admin-ajax.php",
+      "status_code": 400,
+      "size": 1
+    },
+    {
+      "url": "https://uajk.edu.pk/wp-json",
+      "status_code": 200,
+      "size": 340469
+    },
+    {
+      "url": "https://uajk.edu.pk/download",
+      "status_code": 301,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/downloads",
+      "status_code": 301,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/cpanel",
+      "status_code": 301,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/webmail",
+      "status_code": 301,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/favicon.ico",
+      "status_code": 302,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/log",
+      "status_code": 301,
+      "size": 0
+    },
+    {
+      "url": "https://uajk.edu.pk/index.php",
+      "status_code": 301,
+      "size": 0
+    }
+  ]
+}
